@@ -56,3 +56,25 @@ button:disabled {
     background-color: #dc3545;
     color: white;
 }
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#skip-button {
+    background-color: #ffc107;
+    color: #000;
+}
+
+#back-button {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+#home-button {
+    background-color: #17a2b8;
+    color: #fff;
+}
