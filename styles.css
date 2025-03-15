@@ -1,11 +1,16 @@
+/* Загальні стилі для всіх сторінок */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 0;
     padding: 20px;
-    background: url('img/ukraine-pattern.jpg') no-repeat center center fixed;
+    background: url('ukraine-pattern.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
@@ -13,8 +18,8 @@ body {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
 }
 
 h1 {
@@ -23,8 +28,23 @@ h1 {
     margin-bottom: 20px;
 }
 
+button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Стилі для головної сторінки */
 .intro {
-    text-align: left;
+    text-align: center;
     margin: 20px 0;
     padding: 15px;
     background: rgba(255, 255, 255, 0.9);
@@ -40,8 +60,10 @@ h1 {
 }
 
 .intro ul {
-    margin: 15px 0;
+    margin: 15px auto;
     padding-left: 20px;
+    text-align: left;
+    display: inline-block;
 }
 
 .intro li {
@@ -54,23 +76,57 @@ h1 {
     color: #0057b7;
 }
 
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-#start-button, #next-button {
+#start-button {
     background-color: #ffd700;
     color: #0057b7;
 }
 
-#start-button:hover, #next-button:hover {
+#start-button:hover {
     background-color: #e6b800;
+}
+
+/* Стилі для сторінки з питаннями */
+#question-title {
+    font-size: 2em;
+    color: #0057b7;
+    margin-bottom: 20px;
+}
+
+#answers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#answers button {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#answers button:hover {
+    background-color: #e9ecef;
+}
+
+#answers button.correct {
+    background-color: #28a745;
+    color: white;
+}
+
+#answers button.incorrect {
+    background-color: #dc3545;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
 #skip-button {
@@ -91,6 +147,20 @@ button {
     background-color: #5a6268;
 }
 
+#next-button {
+    background-color: #ffd700;
+    color: #0057b7;
+}
+
+#next-button:hover {
+    background-color: #e6b800;
+}
+
+#next-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
 #home-button {
     background-color: #17a2b8;
     color: #fff;
@@ -100,47 +170,43 @@ button {
     background-color: #138496;
 }
 
-#answers button {
-    background-color: #f8f9fa;
-    color: #333;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-#answers button:hover {
-    background-color: #e9ecef;
-}
-
-#answers button.correct {
-    background-color: #28a745;
-    color: white;
-}
-
-#answers button.incorrect {
-    background-color: #dc3545;
-    color: white;
-}
-
 #score {
     font-size: 1.5em;
     color: #0057b7;
     margin-top: 20px;
 }
 
+/* Стилі для сторінки з результатами */
+#final-score {
+    font-size: 2em;
+    color: #0057b7;
+    margin-bottom: 20px;
+}
+
 #leaderboard {
     list-style-type: none;
     padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
 }
 
 #leaderboard li {
     background: rgba(255, 215, 0, 0.8);
-    margin: 5px 0;
+    margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     color: #0057b7;
+    font-size: 1.2em;
+}
+
+#restart-button {
+    background-color: #ffd700;
+    color: #0057b7;
+    margin-top: 20px;
+}
+
+#restart-button:hover {
+    background-color: #e6b800;
 }
 
 .copyright {
