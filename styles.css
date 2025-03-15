@@ -4,7 +4,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 20px;
-    background: url('ukraine-pattern.jpg') no-repeat center center fixed;
+    background: url('img/ukraine-pattern.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     display: flex;
