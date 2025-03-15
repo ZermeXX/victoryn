@@ -9,6 +9,7 @@ const backButton = document.getElementById("back-button");
 const homeButton = document.getElementById("home-button");
 const scoreElement = document.getElementById("score");
 
+// Функція для відображення поточного питання
 function showQuestion() {
     const question = questions[currentQuestion];
     questionElement.textContent = question.question;
@@ -27,9 +28,10 @@ function showQuestion() {
         backButton.style.display = "inline-block";
     }
 
-    nextButton.disabled = true;
+    nextButton.disabled = true; // Деактивуємо кнопку "Наступне питання"
 }
 
+// Функція для обробки вибору відповіді
 function selectAnswer(index) {
     const question = questions[currentQuestion];
     const buttons = answersElement.querySelectorAll("button");
@@ -41,46 +43,49 @@ function selectAnswer(index) {
         buttons[question.correct].classList.add("correct");
     }
     scoreElement.textContent = `Бали: ${score}`;
-    nextButton.disabled = false;
+    nextButton.disabled = false; // Активуємо кнопку "Наступне питання"
 }
 
+// Функція для переходу до наступного питання
 function nextQuestion() {
     currentQuestion++;
     if (currentQuestion < questions.length) {
         showQuestion();
-        nextButton.disabled = true;
     } else {
         localStorage.setItem("score", score);
         window.location.href = "results.html";
     }
 }
 
+// Функція для пропуску питання
 function skipQuestion() {
     currentQuestion++;
     if (currentQuestion < questions.length) {
         showQuestion();
-        nextButton.disabled = true;
     } else {
         localStorage.setItem("score", score);
         window.location.href = "results.html";
     }
 }
 
+// Функція для повернення до попереднього питання
 function goBack() {
     if (currentQuestion > 0) {
         currentQuestion--;
         showQuestion();
-        nextButton.disabled = true;
     }
 }
 
+// Функція для повернення на головну сторінку
 function goHome() {
     window.location.href = "index.html";
 }
 
+// Додаємо обробники подій для кнопок
 nextButton.addEventListener("click", nextQuestion);
 skipButton.addEventListener("click", skipQuestion);
 backButton.addEventListener("click", goBack);
 homeButton.addEventListener("click", goHome);
 
+// Показуємо перше питання при завантаженні сторінки
 showQuestion();
