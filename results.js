@@ -1,6 +1,7 @@
 const finalScoreElement = document.getElementById("final-score");
 const leaderboardElement = document.getElementById("leaderboard");
 const restartButton = document.getElementById("restart-button");
+const homeButton = document.getElementById("home-button");
 
 let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 const score = parseInt(localStorage.getItem("score")) || 0;
@@ -20,5 +21,9 @@ leaderboard.forEach((score, index) => {
 });
 
 restartButton.addEventListener("click", () => {
+    window.location.href = "index.html";
+});
+
+homeButton.addEventListener("click", () => {
     window.location.href = "index.html";
 });
