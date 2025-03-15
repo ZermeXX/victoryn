@@ -1,10 +1,9 @@
-/* Основні стилі */
 body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 0;
     padding: 20px;
-    background: url('img/ukraine-pattern.jpg') no-repeat center center fixed;
+    background: url('ukraine-pattern.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
 }
@@ -19,7 +18,7 @@ body {
 }
 
 h1 {
-    color: #0057b7; /* Синій колір */
+    color: #0057b7;
     font-size: 2.5em;
     margin-bottom: 20px;
 }
@@ -29,7 +28,13 @@ p {
     color: #333;
 }
 
-/* Стилі для кнопок */
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 button {
     padding: 10px 20px;
     margin-top: 10px;
@@ -41,8 +46,8 @@ button {
 }
 
 #start-button, #next-button {
-    background-color: #ffd700; /* Жовтий колір */
-    color: #0057b7; /* Синій колір */
+    background-color: #ffd700;
+    color: #0057b7;
 }
 
 #start-button:hover, #next-button:hover {
@@ -76,7 +81,6 @@ button {
     background-color: #138496;
 }
 
-/* Стилі для варіантів відповідей */
 #answers button {
     background-color: #f8f9fa;
     color: #333;
@@ -101,14 +105,12 @@ button {
     color: white;
 }
 
-/* Стилі для рахунку */
 #score {
     font-size: 1.5em;
     color: #0057b7;
     margin-top: 20px;
 }
 
-/* Стилі для рейтингу */
 #leaderboard {
     list-style-type: none;
     padding: 0;
@@ -126,7 +128,7 @@ button {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    color: lightgray; /* Світло-сірий колір */
+    color: darkgray; /* Темно-сірий колір */
     font-size: 14px;
     opacity: 0.8;
     margin: 0;
