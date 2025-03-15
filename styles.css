@@ -1,50 +1,94 @@
+/* Основні стилі */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 20px;
+    background: url('ukraine-pattern.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
 }
 
 .container {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: 0 auto;
 }
 
 h1 {
+    color: #0057b7; /* Синій колір */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
     color: #333;
 }
 
+/* Стилі для кнопок */
 button {
     padding: 10px 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     cursor: pointer;
-    background-color: #007bff;
-    color: white;
     border: none;
     border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+#start-button, #next-button {
+    background-color: #ffd700; /* Жовтий колір */
+    color: #0057b7; /* Синій колір */
 }
 
-#answers {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+#start-button:hover, #next-button:hover {
+    background-color: #e6b800;
 }
 
+#skip-button {
+    background-color: #ffc107;
+    color: #000;
+}
+
+#skip-button:hover {
+    background-color: #e0a800;
+}
+
+#back-button {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+#back-button:hover {
+    background-color: #5a6268;
+}
+
+#home-button {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+#home-button:hover {
+    background-color: #138496;
+}
+
+/* Стилі для варіантів відповідей */
 #answers button {
     background-color: #f8f9fa;
     color: #333;
     border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#answers button:hover {
+    background-color: #e9ecef;
 }
 
 #answers button.correct {
@@ -57,24 +101,34 @@ button:disabled {
     color: white;
 }
 
-.buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
+/* Стилі для рахунку */
+#score {
+    font-size: 1.5em;
+    color: #0057b7;
     margin-top: 20px;
 }
 
-#skip-button {
-    background-color: #ffc107;
-    color: #000;
+/* Стилі для рейтингу */
+#leaderboard {
+    list-style-type: none;
+    padding: 0;
 }
 
-#back-button {
-    background-color: #6c757d;
-    color: #fff;
+#leaderboard li {
+    background: rgba(255, 215, 0, 0.8);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: #0057b7;
 }
 
-#home-button {
-    background-color: #17a2b8;
-    color: #fff;
+.copyright {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: lightgray; /* Світло-сірий колір */
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+    padding: 5px;
 }
