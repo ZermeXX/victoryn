@@ -107,6 +107,9 @@ let score = 0;
 const questionElement = document.getElementById("question-title");
 const answersElement = document.getElementById("answers");
 const nextButton = document.getElementById("next-button");
+const skipButton = document.getElementById("skip-button");
+const backButton = document.getElementById("back-button");
+const homeButton = document.getElementById("home-button");
 const scoreElement = document.getElementById("score");
 
 function showQuestion() {
@@ -119,6 +122,7 @@ function showQuestion() {
         button.addEventListener("click", () => selectAnswer(index));
         answersElement.appendChild(button);
     });
+    backButton.disabled = currentQuestion === 0; // Кнопка "Назад" неактивна на першому питанні
 }
 
 function selectAnswer(index) {
@@ -146,5 +150,32 @@ function nextQuestion() {
     }
 }
 
+function skipQuestion() {
+    currentQuestion++;
+    if (currentQuestion < questions.length) {
+        showQuestion();
+        nextButton.disabled = true;
+    } else {
+        localStorage.setItem("score", score);
+        window.location.href = "results.html";
+    }
+}
+
+function goBack() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion();
+        nextButton.disabled = true;
+    }
+}
+
+function goHome() {
+    window.location.href = "index.html";
+}
+
 nextButton.addEventListener("click", nextQuestion);
+skipButton.addEventListener("click", skipQuestion);
+backButton.addEventListener("click", goBack);
+homeButton.addEventListener("click", goHome);
+
 showQuestion();
